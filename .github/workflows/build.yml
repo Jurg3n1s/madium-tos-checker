@@ -20,10 +20,11 @@ jobs:
           node-version: "20"
 
       - name: Install esbuild
-        run: npm install -g esbuild typescript
+        run: npm install -g esbuild
 
       - name: Bundle plugin
         run: |
+          mkdir -p dist
           esbuild src/index.ts \
             --bundle \
             --outfile=dist/index.js \
@@ -35,9 +36,21 @@ jobs:
             --jsx-fragment=React.Fragment \
             --platform=browser
 
+      - name: Generate plugin.json with hash
+        run: |
+          HASH=$(sha256sum dist/index.js | awk '{print $1}')
+          cat > dist/plugin.json << EOF
+          {
+            "name": "MadiumTosChecker",
+            "description": "Adds a warning to messages that violate Discord ToS or Madium server rules.",
+            "authors": [{ "name": "Jurg3n1s", "id": "000000000000000000" }],
+            "main": "index.js",
+            "hash": "$HASH"
+          }
+          EOF
+
       - name: Commit dist output
         run: |
-          mkdir -p dist
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add dist/
