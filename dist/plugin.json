@@ -1,12 +1,7 @@
 {
   "name": "MadiumTosChecker",
-  "description": "Adds a ⚠️ warning to messages that violate Discord ToS or Madium server rules.",
-  "authors": [
-    {
-      "name": "Jurg3n1s",
-      "id": "000000000000000000"
-    }
-  ],
+  "description": "Adds a warning to messages that violate Discord ToS or Madium server rules.",
+  "authors": [{ "name": "Jurg3n1s", "id": "000000000000000000" }],
   "main": "index.js",
-  "hash": ""
+  "hash": "26729b36f0c6cbd5fecea0ec7d68d9bc780f72d2073920ec8fcd484243b05e13"
 }
