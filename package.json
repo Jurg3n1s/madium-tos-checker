@@ -1,0 +1,12 @@
+{
+  "name": "madium-tos-checker",
+  "version": "1.0.0",
+  "description": "Revenge plugin that flags messages violating Discord ToS or Madium server rules",
+  "scripts": {
+    "build": "npx @revenge-mod/build"
+  },
+  "devDependencies": {
+    "@revenge-mod/build": "latest",
+    "typescript": "^5.0.0"
+  }
+}
