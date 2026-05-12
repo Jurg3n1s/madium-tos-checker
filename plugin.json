@@ -1,0 +1,12 @@
+{
+  "name": "MadiumTosChecker",
+  "description": "Adds a ⚠️ warning indicator to messages that violate Discord ToS or Madium server rules.",
+  "authors": [
+    {
+      "name": "You",
+      "id": "000000000000000000"
+    }
+  ],
+  "main": "index.js",
+  "hash": ""
+}
